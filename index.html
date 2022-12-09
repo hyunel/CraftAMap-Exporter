@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/style.scss" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+
+  <body>
+    <div id="welcome">
+      <h1>CraftAMap 导出器</h1>
+
+      <p>在开始之前，请先设置高德地图 <a target="_blank" href="https://console.amap.com/dev/key/app">Web端(JS API)</a> 密钥</p>
+
+      <div class="row">
+        <div>
+          <input id="secret-input" placeholder="API Key" />
+          <button id="secret-button" type="button">OK</button>
+        </div>
+      </div>
+    </div>
+    <div id="container"></div>
+    <div id="infowindowDOM">
+      <div class="infowindow home">
+        <div class="close"></div>
+        <div class="arrow"></div>
+
+        <p class="title">基准点</p>
+        <div>
+          <div class="table">
+            <p>经纬度: <span class="home-pos"></span></p>
+            <p>区域数量: <span class="home-regions"></span></p>
+            <p>道路数量: <span class="home-roads"></span></p>
+            <p>建筑数量: <span class="home-buildings"></span></p>
+            <p>路标数量: <span class="home-roadnames"></span></p>
+            <p>POI 数量: <span class="home-pois"></span></p>
+          </div>
+          <hr>
+          <div class="btn-group">
+            <div class="btn clear">清除</div>
+            <div class="btn export">导出</div>
+          </div>
+        </div>
+      </div>
+      <div class="infowindow road">
+        <div class="close"></div>
+        <div class="arrow"></div>
+
+        <p class="title">道路(<span class="road-size"></span>)</p>
+        <div>
+          <p>主键: <span class="road-mainkey"></span></p>
+          <p>子键: <span class="road-subkey"></span></p>
+          <p>道路宽度：<input type="number" class="road-weight"></input></p>
+        </div>
+      </div>
+      <div class="infowindow region">
+        <div class="close"></div>
+        <div class="arrow"></div>
+
+        <p class="title">区域(<span class="region-size"></span>)</p>
+        <div>
+          <p>主键: <span class="region-mainkey"></span></p>
+          <p>子键: <span class="region-subkey"></span></p>
+          <p>预览颜色：<input class="region-color" placeholder="未指定"></input><input class="region-color-picker" type="color"></input></p>
+          <p>方块状态：<input class="region-blockstate" placeholder="忽略区域"></input></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

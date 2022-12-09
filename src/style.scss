@@ -1,0 +1,227 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: #0f0f0f;
+  background-color: #f6f6f6;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #f6f6f6;
+    background-color: #2f2f2f;
+  }
+
+  a:hover {
+    color: #24c8db;
+  }
+
+  input,
+  button {
+    color: #ffffff;
+    background-color: #0f0f0f98;
+  }
+}
+
+#container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+#welcome {
+  padding-top: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+  }
+  
+  a:hover {
+    color: #535bf2;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  input,
+  button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    color: #0f0f0f;
+    background-color: #ffffff;
+    transition: border-color 0.25s;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  button:hover {
+    border-color: #396cd8;
+  }
+  
+  input,
+  button {
+    outline: none;
+  }
+}
+
+#infowindowDOM {
+  display: none;
+}
+
+.infowindow {
+  $theme: rgb(255, 71, 209);
+  $background: rgba(213, 225, 235, .5);
+
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px) saturate(180%);
+  background-color: $background;
+
+  border-radius: 5px;
+  padding: 6px 8px;
+  padding-top: 0;
+
+  input {
+    max-width: 80px;
+    background-color: transparent;
+    border: none;
+    outline: solid 1px rgba(255, 71, 209, .5);
+    border-radius: 2px;
+    transition: all .1s ease;
+    margin: 2px 0;
+  }
+
+  input:focus {
+    outline: solid 1px $theme;
+    background-color: rgba(255, 71, 209, .1);
+  }
+
+  input[type="color"] {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  p {
+    margin: 2px;
+    padding: 0;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  hr {
+    margin: 0;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+  }
+
+  .title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 4px;
+    color: $theme;
+  }
+
+  .arrow {
+    position: absolute;
+    bottom: -8px;
+    width: 0;
+    height: 0;
+    left: calc(50% - 8px - 24px);
+    border-style: solid;
+    border-width: 8px 8px 0 8px;
+    border-color: $background transparent transparent transparent;
+  }
+
+  .close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+  }
+  .close::before {
+    $size: 16px;
+    
+    content: "";
+    display: inline-block;
+    height: $size;
+    width: $size;
+    background-image: url("/src/assets/close.svg");
+    background-size: contain;
+    cursor: pointer;
+  }
+
+  &.home {
+    .table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 4px;
+    }
+
+    
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between
+    }
+
+    .btn {
+      width: 48%;
+      text-align: center;
+      border-radius: 3px;
+      font-size: 14px;
+      cursor: pointer;
+      padding: 3px 0;
+      transition: all .1s ease;
+    }
+
+    .clear {
+      color: $theme;
+      border: solid 1px $theme;
+    }
+
+    .clear:hover {
+      background-color: rgba(255, 71, 209, .1);
+    }
+
+    .export {
+      color: white;
+      background-color: $theme;
+    }
+
+    .export:hover {
+      background-color: rgba(255, 71, 209, .8);
+    }
+  }
+}
