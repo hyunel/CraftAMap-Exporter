@@ -1,6 +1,6 @@
-# Tauri + Vanilla TS
+# CraftAMap Exporter
 
-This template should help get you started developing with Tauri in vanilla HTML, CSS and Typescript.
+将高德地图上的选取区域导出为 [CraftAMap](https://github.com/hyunel/CraftAMap) 需要的地图数据
 
 ## Recommended IDE Setup
 
