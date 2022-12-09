@@ -334,6 +334,8 @@ function getRegionType(mainkey: number, subkey: number, regionTypeOverride: Regi
     if(type) return type;
 
     type = getStyleMap(mainkey, subkey, regionTypeMap);
+    if(type && !type.previewColor) type.previewColor = '';
+
     return type || {
         previewColor: '',
         blockState: ''

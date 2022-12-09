@@ -1,7 +1,6 @@
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 24px;
   font-weight: 400;
 
   color: #0f0f0f;
@@ -46,6 +45,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  line-height: 24px;
   
   .row {
     display: flex;
